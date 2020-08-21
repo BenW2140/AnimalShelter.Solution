@@ -39,7 +39,14 @@ Software Requirements:
 
 5. To initiate this application, run the command: $ dotnet run
 
-
+Http Request
+  ```
+  Get /api/animals
+  Post /api/animals'
+  Get /api/animals/{id}
+  Put /api/animals/{id}
+  Delete /api/animals/{id}
+  ```
 
 ## Known Bugs
 
