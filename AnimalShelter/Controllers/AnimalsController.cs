@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,7 @@ namespace AnimalShelter.Controllers
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Animal>> Get(string name, string species, string gender)
+    public async Task<IActionResult> Get(string name, string species, string gender)
     {
       var query = _db.Animals.AsQueryable();
 
@@ -35,7 +36,8 @@ namespace AnimalShelter.Controllers
         query = query.Where(entry => entry.Gender == gender);
       }
 
-      return query.ToList();
+      var response = await query.ToListAysnc();
+      return Ok(response);
     }
 
     [HttpPost]
@@ -46,9 +48,10 @@ namespace AnimalShelter.Controllers
     }
 
     [HttpGet("{id}")]
-    public ActionResult<Animal> Get(int id)
+    public async Task<IActionResult> Get(int id)
     {
-      return _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
+      var animal = await _db.Animals.Where(a => a.AnimalId == id).FirstOrDefaultAsync();
+      return Ok(new Response<Animal>(animal));
     }
     
     [HttpPut("{id}")]
