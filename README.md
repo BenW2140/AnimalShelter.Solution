@@ -6,7 +6,7 @@
 
 ## Description
 
-_This api lets a user search a shelter for dogs and cats, and also allows a user to filter their search_
+_This api lets a user search a shelter for dogs and cats, and also allows a user to filter their search, as well as, allow them to add, wdit, and remove entries from the api
 
 ## Setup/Installation Requirements
 
@@ -39,8 +39,6 @@ Software Requirements:
 
 5. To initiate this application, run the command: $ dotnet run
 
-
-## User Stories
 
 
 ## Known Bugs
