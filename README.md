@@ -39,7 +39,7 @@ Software Requirements:
 
 5. To initiate this application, run the command: $ dotnet run
 
-Http Request
+## Http Request
   ```
   Get /api/animals
   Post /api/animals'
@@ -48,7 +48,7 @@ Http Request
   Delete /api/animals/{id}
   ```
 
-Path Parameters
+## Path Parameters
 
   Parameter|Type|Default|Required|Description
   -------|------|-------|--------|-----------------------------
@@ -56,11 +56,11 @@ Path Parameters
   species|string|none|true|Returns matches by species
   gender|string|none|true|Returns matches by gender
 
-Example Query
+## Example Query
 
   `http://localhost:5000/api/animals?name=pluto`
 
-Sample Response
+## Sample Response
 
   ```
   {
@@ -73,7 +73,13 @@ Sample Response
   }
   ```
 
+## Versioning
 
+  To use different versions of this api, either
+  * Add an `api-version` header with the version you want to use
+  * Query the api using `?api-version=x.y`
+  
+  _(However this api only has one version so its not much use, but it works)_
 
 ## Known Bugs
 
