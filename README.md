@@ -58,7 +58,22 @@ Path Parameters
 
 Example Query
 
-  `http://localhost:5000/api/animals`
+  `http://localhost:5000/api/animals?name=pluto`
+
+Sample Response
+
+  ```
+  {
+    "animalId": 3,
+    "name": "Pluto",
+    "age": 1,
+    "species": "Dog",
+    "gender": "Male",
+    "fixed": false
+  }
+  ```
+
+
 
 ## Known Bugs
 
