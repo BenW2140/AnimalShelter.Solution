@@ -48,6 +48,14 @@ Http Request
   Delete /api/animals/{id}
   ```
 
+Path Parameters
+
+  Parameter|Type|Default|Required|Description
+  -------|------|-------|--------|-----------------------------
+  name|string|none|true|Returns matches by name
+  species|string|none|true|Returns matches by species
+  gender|string|none|true|Returns matches by gender
+
 ## Known Bugs
 
 _No bugs known at this time_
