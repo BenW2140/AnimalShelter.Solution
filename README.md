@@ -56,6 +56,10 @@ Path Parameters
   species|string|none|true|Returns matches by species
   gender|string|none|true|Returns matches by gender
 
+Example Query
+
+  `http://localhost:5000/api/animals`
+
 ## Known Bugs
 
 _No bugs known at this time_
