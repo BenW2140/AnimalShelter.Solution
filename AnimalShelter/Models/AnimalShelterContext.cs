@@ -6,6 +6,16 @@ namespace AnimalShelter.Models
   {
     public AnimalShelterContext(DbContextOptions<AnimalShelterContext> options) : base(options) {}
 
-    public DbSet<Animal> animals { get; set; }
+    public DbSet<Animal> Animals { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+      builder.Entity<Animal>()
+        .HasData(
+          new Animal { AnimalId = 1, Name = "", Age = 3, Species = "Cat", Gender = "Male", Fixed = true },
+          new Animal { AnimalId = 2, Name = "", Age = 9, Species = "Dog", Gender = "Female", Fixed = true },
+          new Animal { AnimalId = 3, Name = "", Age = 1, Species = "Dog", Gender = "Male", Fixed = false }
+        );
+    }
   }
 }
