@@ -7,6 +7,7 @@ using AnimalShelter.Models;
 
 namespace AnimalShelter.Controllers
 {
+  [ApiVersion("1.0")]
   [ApiController]
   [Route("api/[controller]")]
   public class AnimalsController : Controller
@@ -19,7 +20,7 @@ namespace AnimalShelter.Controllers
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get(string name, string species, string gender)
+    public ActionResult<IEnumerable<Animal>> Get(string name, string species, string gender)
     {
       var query = _db.Animals.AsQueryable();
 
@@ -36,8 +37,7 @@ namespace AnimalShelter.Controllers
         query = query.Where(entry => entry.Gender == gender);
       }
 
-      var response = await query.ToListAysnc();
-      return Ok(response);
+      return query.ToList();
     }
 
     [HttpPost]
